@@ -1,0 +1,19 @@
+h1 {
+	color: white;
+	background-color: green;
+	text-align:center;
+	font-family: bahnschrift;
+}
+
+h2
+{
+	font-family: bahnschrift;
+	padding-left: 10px
+}
+
+h6 {
+	color: white;
+	background-color: green;
+	padding: 10px;
+	font-family: bahnschrift;
+}
