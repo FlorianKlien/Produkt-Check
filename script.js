@@ -9,10 +9,22 @@ function Reset(){
 	return;
 }
 
+
+const radioButton = document.querySelector('input[type="radio"]:checked');
+
+window.addEventListener('change', function() {
+  //Speichern();
+  //Graph();
+  console.log('Radio-Button wurde ausgewählt.');
+});
+
+
 function Speichern(){
     for (var x = 1; x <= 3; x++){
         for (var y = 1; y <= 26; y++){
-            const WerteKategorie = document.getElementById(`Kategorie${i}-${j}`).value;
+          // "Kategorie"+x+"-"+y
+            const WerteKategorie = document.getElementsByName("Kategorie"+x+"-"+y).value;
+            alert(WerteKategorie);
             if (x == 1){
                 WerteKategorie.push(WerteProdukt1)
             }
@@ -26,13 +38,8 @@ function Speichern(){
     }
 }
 
-const LastKategorie1 = document.getElementById("Kategorie26-1")
-const LastKategorie2 = document.getElementById("Kategorie26-2")
-const LastKategorie3 = document.getElementById("Kategorie26-3")
-
-if (LastKategorie1 != "")
-
-const ctx = document.getElementById('myChart');
+function Graph(){
+  const ctx = document.getElementById('myChart');
 
   new Chart(ctx, {
     type: 'line',
@@ -60,3 +67,4 @@ const ctx = document.getElementById('myChart');
       }
     }
   });
+}
