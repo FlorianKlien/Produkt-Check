@@ -13,29 +13,31 @@ function Reset(){
 const radioButton = document.querySelector('input[type="radio"]:checked');
 
 window.addEventListener('change', function() {
-  //Speichern();
-  //Graph();
-  console.log('Radio-Button wurde ausgewählt.');
+  if (this.event.target.type === 'radio' && this.event.target.name.startsWith('Kategorie')) {
+    Speichern();
+    //Graph();
+    console.log('Radio-Button wurde ausgewählt.');
+  }
 });
 
 
 function Speichern(){
-    for (var x = 1; x <= 3; x++){
-        for (var y = 1; y <= 26; y++){
-          // "Kategorie"+x+"-"+y
-            const WerteKategorie = document.getElementsByName("Kategorie"+x+"-"+y).value;
-            alert(WerteKategorie);
-            if (x == 1){
-                WerteKategorie.push(WerteProdukt1)
-            }
-            else if (x ==2){
-                WerteKategorie.push(WerteProdukt2)
-            }
-            else{
-                WerteKategorie.push(WerteProdukt3)
-            }
-        }
+  for (var x = 1; x <= 3; x++){
+    for (var y = 1; y <= 26; y++){
+      const WerteKategorie = document.getElementsByName("Kategorie"+x+"-"+y).value;
+      console.log("Wert" +WerteKategorie);
+      if (x == 1){
+        WerteProdukt1.push(WerteKategorie)
+      }
+      else if (x ==2){
+        WerteProdukt1.push(WerteKategorie)
+      }
+      else{
+        WerteProdukt3.push(WerteKategorie)
+      }
     }
+  }
+  
 }
 
 function Graph(){
