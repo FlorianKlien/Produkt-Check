@@ -26,10 +26,10 @@ function Speichern(){
     for (var y = 1; y <= 26; y++){
       const WerteKategorie = document.getElementsByName("Kategorie"+x+"-"+y).value;
       console.log("Wert" +WerteKategorie);
-      if (x == 1){
+      if (x === 1){
         WerteProdukt1.push(WerteKategorie)
       }
-      else if (x ==2){
+      else if (x ===2){
         WerteProdukt1.push(WerteKategorie)
       }
       else{
