@@ -21,23 +21,25 @@ window.addEventListener('change', function() {
 });
 
 
-function Speichern(){
-  for (var x = 1; x <= 3; x++){
-    for (var y = 1; y <= 26; y++){
-      const WerteKategorie = document.getElementsByName("Kategorie"+x+"-"+y).value;
-      console.log("Wert" +WerteKategorie);
-      if (x === 1){
-        WerteProdukt1.push(WerteKategorie)
-      }
-      else if (x ===2){
-        WerteProdukt1.push(WerteKategorie)
-      }
-      else{
-        WerteProdukt3.push(WerteKategorie)
+function Speichern() {
+  for (var x = 1; x <= 3; x++) {
+    for (var y = 1; y <= 26; y++) {
+      const radioButtons = document.getElementsByName("Kategorie" + x + "-" + y);
+      for (var i = 0; i < radioButtons.length; i++) {
+        if (radioButtons[i].checked) {
+          const WerteKategorie = radioButtons[i].value;
+          console.log("Wert: " + WerteKategorie);
+          if (x === 1) {
+            WerteProdukt1.push(WerteKategorie);
+          } else if (x === 2) {
+            WerteProdukt2.push(WerteKategorie);
+          } else {
+            WerteProdukt3.push(WerteKategorie);
+          }
+        }
       }
     }
   }
-  
 }
 
 function Graph(){
