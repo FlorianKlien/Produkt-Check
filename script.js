@@ -2,7 +2,8 @@ const WerteProdukt1 = [];
 const WerteProdukt2 = [];
 const WerteProdukt3 = [];
 
-const Kategorien = ["1", "2", "3", "z"];
+const Kategorien = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+
 
 function Reset(){
 	location.reload();
@@ -13,21 +14,25 @@ function Reset(){
 const radioButton = document.querySelector('input[type="radio"]:checked');
 
 window.addEventListener('change', function() {
-  if (this.event.target.type === 'radio' && this.event.target.name.startsWith('Kategorie')) {
-    Speichern();
-    //Graph();
+  const target = event.target;
+  if (target.type === 'radio') {
+    Save();
     console.log('Radio-Button wurde ausgewählt.');
   }
 });
 
 
-function Speichern() {
+function Save() {
+  const WerteProdukt1 = [];
+  const WerteProdukt2 = [];
+  const WerteProdukt3 = [];
+
   for (var x = 1; x <= 3; x++) {
     for (var y = 1; y <= 26; y++) {
-      const radioButtons = document.getElementsByName("Kategorie" + x + "-" + y);
-      for (var i = 0; i < radioButtons.length; i++) {
-        if (radioButtons[i].checked) {
-          const WerteKategorie = radioButtons[i].value;
+      const radioButtons = document.getElementsByName("Kategorie" + y + "-" + x);
+      for (var z = 0; z < radioButtons.length; z++) {
+        if (radioButtons[z].checked) {
+          const WerteKategorie = radioButtons[z].value;
           console.log("Wert: " + WerteKategorie);
           if (x === 1) {
             WerteProdukt1.push(WerteKategorie);
@@ -40,35 +45,42 @@ function Speichern() {
       }
     }
   }
+
+  chart.data.datasets[0].data = WerteProdukt1;
+  chart.data.datasets[1].data = WerteProdukt2;
+  chart.data.datasets[2].data = WerteProdukt3;
+  chart.update();
+
 }
 
-function Graph(){
-  const ctx = document.getElementById('myChart');
+const ctx = document.getElementById('myChart');
 
-  new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: Kategorien,
-      datasets: [{
-        label: 'Produkt 1',
-        data: WerteProdukt1,
-        borderWidth: 1
-      },{
-        label: 'Produkt 2',
-        data: WerteProdukt2,
-        borderWidth: 1
-      },{
-        label: 'Produkt 3',
-        data: WerteProdukt3,
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
+const chart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: Kategorien,
+    datasets: [{
+      label: 'Produkt 1',
+      data: WerteProdukt1,
+      borderWidth: 1
+    },{
+      label: 'Produkt 2',
+      data: WerteProdukt2,
+      borderWidth: 1
+    },{
+      label: 'Produkt 3',
+      data: WerteProdukt3,
+      borderWidth: 1
+    }]
+  },
+  options: {
+    indexAxis: "y",
+    scales: {
+      x: {
+        beginAtZero: true,
+        max:3, 
+        min:-3
       }
     }
-  });
-}
+  }
+});
