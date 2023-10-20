@@ -2,7 +2,7 @@ const WerteProdukt1 = [];
 const WerteProdukt2 = [];
 const WerteProdukt3 = [];
 
-const Kategorien = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+const Kategorien = ["Kundennutzen", "Kundenakzeptanz", "Innovativität", "Technische Qualität", "Zubehör, Optionen", "Dokumentation", "Serviceleistungen", "Marktpreis", "Händlerrabatte", "Flächendeckung", "Qualität Vertrieb", "Motivation Vertrieb", "Abnehmerbindung", "Lieferzeit", "Liefertreue", "Bekanntheitsgrad", "Produktimage", "Werbemaßnahmen", "Verkaufsförderung", "Pressearbeit", "Erzielte Umsätze", "Erzielte Gewinne (DB)", "Interner Stellenwert", "Beschaffungssituation", "F&E Kompetenz", "Produktteam"];
 
 
 function Reset(){
