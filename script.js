@@ -84,3 +84,13 @@ const chart = new Chart(ctx, {
     }
   }
 });
+
+function Export(){
+  var image = chart.toBase64Image();
+  console.log(image);
+
+  var a = document.createElement('a');
+  a.href = chart.toBase64Image();
+  a.download = 'Produktcheck.png';
+  a.click();
+}
