@@ -14,13 +14,12 @@
 		
 		<button onclick="Reset();">zurücksetzen</button>
 
-		<button onclick="Export();">export</button>
+		<button onclick="Export();">exportieren</button>
 
 		<div id = "Gesamt">
 
 			<div id = "Produkt1">
 				<h3>Produkt 1</h3>
-	
 				<table>
 					<thead>
 						<tr>
@@ -36,7 +35,7 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td>Kundennutzen</td>
+							<th>Kundennutzen</th>
 							<td><input type="radio" name="Kategorie1-1" value="-3"></td>
 							<td><input type="radio" name="Kategorie1-1" value="-2"></td>
 							<td><input type="radio" name="Kategorie1-1" value="-1"></td>
@@ -46,7 +45,7 @@
 							<td><input type="radio" name="Kategorie1-1" value="3"></td>
 						</tr>
 						<tr>
-							<td>Kundenakzeptanz</td>
+							<th>Kundenakzeptanz</th>
 							<td><input type="radio" name="Kategorie2-1" value="-3"></td>
 							<td><input type="radio" name="Kategorie2-1" value="-2"></td>
 							<td><input type="radio" name="Kategorie2-1" value="-1"></td>
@@ -856,13 +855,8 @@
 				</table>
 			</div>
 			</div>
-	
-			<br>
-			<br>
-			<br>
-	
-	
-			<div>
+			
+			<div id = "chartdiv">
 				<canvas id="myChart"></canvas>
 			</div>
 	
